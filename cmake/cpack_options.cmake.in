@@ -77,7 +77,7 @@ IF (WIN32)
     set(CPACK_PACKAGE_EXECUTABLES @PROJECT_EXECUTABLES@)
     if(INSTALL_DOCUMENTATION)
         set(CPACK_NSIS_MENU_LINKS
-            "@CMAKE_INSTALL_PREFIX@/share/doc/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/html/index.html"
+            "@CMAKE_INSTALL_PREFIX@/share/doc/@PROJECT_NAME@-@PROJECT_VERSION_MAJOR@/html/index.html"
             "Component documentation")
     endif(INSTALL_DOCUMENTATION)
     string(REPLACE "/@PROJECT_NAME@" "" install_prefix_root
@@ -85,10 +85,10 @@ IF (WIN32)
     file(TO_NATIVE_PATH "${install_prefix_root}" install_prefix_root)
     set(CPACK_NSIS_INSTALL_ROOT "${install_prefix_root}")
     set(CPACK_NSIS_EXTRA_INSTALL_COMMANDS
-        "  Rename \"$INSTDIR\\share\\@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@\\@PROJECT_NAME_LOWER@-config.cmake\" \"$INSTDIR\\@PROJECT_NAME_LOWER@-config.cmake\"
-  Rename \"$INSTDIR\\share\\@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@\\@PROJECT_NAME_LOWER@-config-version.cmake\" \"$INSTDIR\\@PROJECT_NAME_LOWER@-config-version.cmake\"")
+        "  Rename \"$INSTDIR\\share\\@PROJECT_NAME@-@PROJECT_VERSION_MAJOR@\\@PROJECT_NAME@-config.cmake\" \"$INSTDIR\\@PROJECT_NAME@-config.cmake\"
+  Rename \"$INSTDIR\\share\\@PROJECT_NAME@-@PROJECT_VERSION_MAJOR@\\@PROJECT_NAME@-config-version.cmake\" \"$INSTDIR\\@PROJECT_NAME@-config-version.cmake\"")
     set(CPACK_NSIS_EXTRA_UNINSTALL_COMMANDS
-        "  Delete \"$INSTDIR\\@PROJECT_NAME_LOWER@-config.cmake\"
-  Delete \"$INSTDIR\\@PROJECT_NAME_LOWER@-config-version.cmake\"")
+        "  Delete \"$INSTDIR\\@PROJECT_NAME@-config.cmake\"
+  Delete \"$INSTDIR\\@PROJECT_NAME@-config-version.cmake\"")
 ENDIF (WIN32)
 
