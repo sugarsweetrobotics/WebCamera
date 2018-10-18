@@ -29,7 +29,7 @@ if(DOXYGEN_FOUND)
     #    ${CMAKE_CURRENT_SOURCE_DIR}/content ${CMAKE_CURRENT_BINARY_DIR}/html
     #    DEPENDS doxygen_doc)
     #install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/html" DESTINATION
-    #    "components/share/doc/${PROJECT_NAME_LOWER}-${PROJECT_VERSION_MAJOR}"
+    #    "components/share/doc/${PROJECT_NAME}-${PROJECT_VERSION_MAJOR}"
     #    COMPONENT documentation)
 else(DOXYGEN_FOUND)
     message(FATAL_ERROR

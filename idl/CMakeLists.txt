@@ -32,6 +32,7 @@ macro(_COMPILE_IDL _idl_file)
         DEPENDS ${_idl_file}
         COMMENT "Compiling ${_idl_file}" VERBATIM)
     add_custom_target(${_idl}_TGT DEPENDS ${${_idl_srcs_var}})
+    
     set(ALL_IDL_SRCS ${ALL_IDL_SRCS} ${${_idl_srcs_var}})
     if(NOT TARGET ALL_IDL_TGT)
         add_custom_target(ALL_IDL_TGT)
@@ -51,6 +52,6 @@ OPENRTM_COMPILE_IDL_FILES(${idls})
 set(ALL_IDL_SRCS ${ALL_IDL_SRCS} PARENT_SCOPE)
 FILTER_LIST(ALL_IDL_SRCS "hh$" idl_headers)
 install(FILES ${idl_headers}
-    DESTINATION ${INC_INSTALL_DIR}/${PROJECT_NAME_LOWER}/idl
+    DESTINATION ${INC_INSTALL_DIR}/${PROJECT_NAME}/idl
     COMPONENT headers)
 
